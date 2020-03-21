@@ -23,3 +23,8 @@ pytest-cov==2.8.1  # https://github.com/pytest-dev/pytest-cov
 django-coverage-plugin==1.6.0  # https://github.com/nedbat/django_coverage_plugin
 
 # Put your requirement here
+django-filter==2.2.0
+httpagentparser==1.9.0
+redis>=3.2.0
+celery==4.4.2
+

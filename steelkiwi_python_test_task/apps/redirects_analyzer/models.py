@@ -9,7 +9,7 @@ class RedirectInfo(TimeStampedModel):
     """
     redirect_full_url = models.URLField(max_length=500)
     redirect_domain_name = models.CharField(max_length=100)
-    redirect_get_paramenters = models.CharField(max_length=500, blank=True)
+    redirect_query = models.CharField(max_length=500, blank=True)
     referrer_full_url = models.URLField(max_length=500, blank=True)
     referrer_domain_name = models.CharField(max_length=100, blank=True)
     
