@@ -3,6 +3,8 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from rest_framework.documentation import include_docs_urls
+
 from redirects_analyzer.views import (RedirectView,
                                       RedirectInfoListView,
                                       RedirectInfoStatsView,
@@ -12,7 +14,7 @@ from redirects_analyzer.views import (RedirectView,
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
-
+    path('docs/', include_docs_urls(title='Redirects analyzer API', public=False)),
     # API urls
     path('api/', include(([
         path('analyzer/redirects/', RedirectView.as_view(), name="redirect"),

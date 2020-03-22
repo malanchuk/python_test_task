@@ -27,4 +27,4 @@ django-filter==2.2.0
 httpagentparser==1.9.0
 redis>=3.2.0
 celery==4.4.2
-
+mixer

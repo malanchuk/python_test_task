@@ -60,18 +60,19 @@ class RedirectInfoListView(ListAPIView):
 class RedirectInfoStatsView(ListAPIView):
     """
     View to get aggregated statistics about redirects.
+    Endpoint returns the list of performed redirects grouped by 
+    full urls without get parameters. 
+    Annotated by the number of unique records 
+    of redirects with full url and contains
+    a list of referrers of the redirect, 
+    and the date and time of the latest redirect.
     """
     queryset = RedirectInfo.objects.all()
     serializer_class = RedirectInfoStatsSerializer
 
     def get_queryset(self):
         """
-        Queryset of performed redirects grouped by 
-        full urls without get parameters. 
-        Annotated by the number of unique records 
-        of redirects with full url. 
-        Contains a list of referrers of the redirect, 
-        and the date and time of the latest redirect.
+        Custom aggregation queryset
         """
         return RedirectInfo.objects.annotate(
                     redirect_url=Replace(
