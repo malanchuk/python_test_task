@@ -3,8 +3,10 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from redirects_analyzer.views import (RedirectInfoView,
-                                      RedirectView)
+from redirects_analyzer.views import (RedirectView,
+                                      RedirectInfoListView,
+                                      RedirectInfoStatsView,
+                                      RedirectInfoTopView)
 
 
 urlpatterns = [
@@ -15,11 +17,14 @@ urlpatterns = [
     path('api/', include(([
         path('analyzer/redirects/', RedirectView.as_view(), name="redirect"),
         path('analyzer/redirects/list/', 
-            RedirectInfoView.as_view(), 
+            RedirectInfoListView.as_view(), 
             name="redirect-list"),
-        # path('analyzer/redirects/top_domains/', 
-        #     RedirectInfoTopDomainsView.as_view(), 
-        #     name="redirect-top-domains"),
+        path('analyzer/redirects/stats/', 
+            RedirectInfoStatsView.as_view(), 
+            name="redirect-stats"),
+        path('analyzer/redirects/top/', 
+            RedirectInfoTopView.as_view(), 
+            name="redirect-top"),
     ], 'api'), namespace='api')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

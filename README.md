@@ -16,6 +16,7 @@ Make sure to have the following on your host:
 
 - Python >= 3.7
 - PostgreSQL >=10
+- Redis >= 5
 - git
 
 ### Setting Up Development Environment
@@ -60,6 +61,12 @@ Apply migrations:
 
 ```bash
 $ python manage.py migrate
+```
+
+Run celery worker:
+
+```bash
+$ celery -A config worker -l info
 ```
 
 Run development server:

@@ -32,7 +32,7 @@ def save_redirect_info_task(redirect_to, referrer='', ip='', user_agent=''):
                     ua['os'].get('version','')]).strip()
 
     redirect_obj = RedirectInfo(
-        redirect_full_url=redirect_to,
+        redirect_full_url=redirect_to.split('?')[0],
         redirect_domain_name=parsed_redirect_to.netloc,
         redirect_query=parsed_redirect_to.query,
         referrer_full_url=referrer,

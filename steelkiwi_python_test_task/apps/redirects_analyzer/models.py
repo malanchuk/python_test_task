@@ -19,4 +19,4 @@ class RedirectInfo(TimeStampedModel):
     platform = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
-        return self.redirect_full_url
+        return self.redirect_full_url 
