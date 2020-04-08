@@ -1,6 +1,5 @@
-# Steelkiwi Python Test Task
+# Python Test Task
 
-[![steelkiwi](https://img.shields.io/badge/steelkiwi-black?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH4QwFDCoN+yI2RQAAAAJiS0dEAP+Hj8y/AAABd0lEQVQ4y9WTzStEYRTGh5z3PcfnAguSmWyU1EgRu2HJYhpKSVEKGUZD0lioWYwsiSkLxX9gpaylyNKGRpr1yMLHRNz5eCzuvTNXDdZ+2/Or87zn6XXJH7j+jcDkQJsDRURsCdzinyjSwSLCVUPB4Ewbi7hE2HNq5ArkF0lE10We8L7VYAo0lYWDEIluin/gebXGWkFh4CYasVjv1ar9OIfUdCVbIWkZWCkvhlT9F0AyoAuvoGVgluxnMfsTwPWgkm/CnC1w9fwD8DhIUlrQ9bE0gExYO4XFt/S0KXDzoYHPRAb3XscK9gz4WllERGgyi4/trivgoMZxalbKnAsFgf26irE0XvyqVFkUBBYqpPYQOGvmH4QQifLeIbumC4IuHKlsCQiRiAoZSHYrO2TnSMBi/NwUuPEEOKq1u9jIGRYZID9DIqJ8KbyOKkuIOsu89Zq7Y3lcus269XB812Zvs88Mr92x+E6Ptu6giyj7xqy1/l8f5ze+AIGTzdfyz0XyAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTEyLTA1VDEyOjQyOjEzKzAxOjAweKsLygAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0xMi0wNVQxMjo0MjoxMyswMTowMAn2s3YAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=)](https://steelkiwi.com/)
 
 You must develop a small REST API service that facilitates redirection to third-party resources. The purpose of this service is to collect information that may be needed for statistical analysis and to perform redirection.
 
@@ -48,7 +47,7 @@ $ pip install -r requirements.txt
 Create a new PostgreSQL database using `createdb`:
 
 ```bash
-$ createdb steelkiwi_python_test_task -h localhost -U postgres
+$ createdb python_test_task -h localhost -U postgres
 ```
 
 Create a file with environment variables:
@@ -94,7 +93,7 @@ $ python manage.py runserver
 
   Below, there’s an example of what an endpoint might look like:
 
-  `GET /analyzer/redirect?to=https://steelkiwi.com/jobs/`
+  `GET /analyzer/redirect?to=https://example.com/jobs/`
   
   This is just an example. You can use this example and make it more convenient for you and more optimal in terms of project development.
 
@@ -113,12 +112,12 @@ $ python manage.py runserver
 
         ```txt
         id: 1
-        redirect_full_url: https://steelkiwi.com/jobs/
+        redirect_full_url: https://example.com/jobs/
         referrer_domain_name: site1.com
         created_at: 22-01-2020 18:00:00
 
         id: 2
-        redirect_full_url: https://steelkiwi.com/jobs/
+        redirect_full_url: https://example.com/jobs/
         referrer_domain_name: site2.com
         created_at: 22-01-2020 18:02:00
         ```
@@ -126,7 +125,7 @@ $ python manage.py runserver
         Result must contain item like this one:
 
         ```json
-        "redirect_full_url": "https://steelkiwi.com/jobs/",
+        "redirect_full_url": "https://example.com/jobs/",
         "redirects": 2,
         "referrers": ["site1.com", "site2.com"],
         "last_redirected": "22-01-2020 18:02:00"

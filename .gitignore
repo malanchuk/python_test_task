@@ -300,7 +300,7 @@ pip-selfcheck.json
 .env
 
 ### Project template
-steelkiwi_python_test_task/media/
+python_test_task/media/
 
 .pytest_cache/
 

@@ -6,8 +6,8 @@ import os
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 2
-APPS_DIR = ROOT_DIR.path('steelkiwi_python_test_task')
-sys.path.append('steelkiwi_python_test_task/apps')
+APPS_DIR = ROOT_DIR.path('python_test_task')
+sys.path.append('python_test_task/apps')
 
 env = environ.Env(
     DJANGO_DEBUG=(bool, False),

@@ -13,7 +13,7 @@ indent_size = 4
 
 [*.py]
 line_length=120
-known_first_party=steelkiwi_python_test_task
+known_first_party=python_test_task
 multi_line_output=3
 default_section=THIRDPARTY
 
