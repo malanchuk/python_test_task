@@ -26,5 +26,5 @@ django-coverage-plugin==1.6.0  # https://github.com/nedbat/django_coverage_plugi
 django-filter==2.2.0
 httpagentparser==1.9.0
 redis>=3.2.0
-celery==4.4.2
+celery==5.2.2
 mixer
